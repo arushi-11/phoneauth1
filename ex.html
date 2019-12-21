@@ -1,0 +1,23 @@
+<div class="container-fluid" ng-app="example">
+  <div class="container" ng-controller="exampleController as $ctrl">
+    <form name="mobile" novalidate>
+      <label class="item item-input">
+    <i class="icon placeholder-icon"></i>
+    <input type="tel"
+           name="number"
+           placeholder="Enter your mobile number"
+           autocomplete="off"
+           ng-model="$ctrl.user.mobile"
+           ng-pattern="/^(\+\d{1,3}[- ]?)?\d{10}$/"
+           required="">
+          </label>
+      <button id="sign-in-button"
+              class="button icon btn-next"
+              ng-disabled="mobile.number.$invalid"
+              ng-click="$ctrl.onSignInSubmit(user.mobile)">
+            submit
+      </button>
+    </form>
+    <div id="phone-sign-in-recaptcha"></div>
+  </div>
+</div>
